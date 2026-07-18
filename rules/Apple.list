@@ -1,0 +1,13 @@
+# Loon-Rules / Apple — 建议策略: DIRECT 或 Apple 专线组
+# 按你的网络环境在 Loon 订阅时选择策略
+
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,apple.com.cn
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,itunes.com
+DOMAIN-SUFFIX,appstore.com
+DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,aaplimg.com

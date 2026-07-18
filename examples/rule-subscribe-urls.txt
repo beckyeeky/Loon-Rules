@@ -1,0 +1,21 @@
+# 复制到 Loon → 规则 → 订阅规则
+
+Direct-Custom
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Direct.list
+# policy: DIRECT
+
+Proxy-Custom
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Proxy.list
+# policy: PROXY
+
+Reject-Custom
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Reject.list
+# policy: REJECT
+
+Apple-Custom
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Apple.list
+# policy: DIRECT or Apple group
+
+AI-Custom
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
+# policy: PROXY

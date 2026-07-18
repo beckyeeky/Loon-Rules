@@ -1,0 +1,21 @@
+# Loon-Rules / Reject — 建议策略: REJECT
+# 轻量自用拦截；完整去广告请用可莉插件中心，勿与本列表抢同一接口时硬刚
+
+# 常见统计/广告域（示例，可按日志增删）
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,google-analytics.com
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,scorecardresearch.com
+DOMAIN-SUFFIX,adsrvr.org
+DOMAIN-SUFFIX,adsafeprotected.com
+DOMAIN-SUFFIX,umeng.com
+DOMAIN-SUFFIX,umengcloud.com
+DOMAIN-SUFFIX,cnzz.com
+DOMAIN-SUFFIX,cnzz.net
+DOMAIN-SUFFIX,bdstatic.com
+# 注意: bdstatic 若影响百度正常资源，可删掉上一行
+DOMAIN-KEYWORD,adservice
+DOMAIN-KEYWORD,pagead
