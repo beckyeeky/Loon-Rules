@@ -27,6 +27,7 @@ https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Direct.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Proxy.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Reject.list
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/PikPak.list
 ```
 
 jsDelivr 备用：
@@ -44,6 +45,7 @@ https://cdn.jsdelivr.net/gh/beckyeeky/Loon-Rules@main/rules/Direct.list
 | `rules/Reject.list` | 拦截（广告/追踪；轻量自用，非可莉全家桶） |
 | `rules/Apple.list` | Apple 相关（按需挂 DIRECT 或专线组） |
 | `rules/AI.list` | AI / LLM 服务（通常挂 PROXY） |
+| `rules/PikPak.list` | PikPak 网盘（通常挂 PROXY / 下载组） |
 
 格式说明见 [`AGENTS.md`](./AGENTS.md)。片段示例见 [`examples/`](./examples/)。
 

@@ -1,0 +1,15 @@
+# Loon-Rules / PikPak — 建议策略: PROXY（或下载专线组）
+# 参考社区 blackmatrix7 / tugepaopao 列表，按需增删
+
+DOMAIN-SUFFIX,mypikpak.com
+DOMAIN-SUFFIX,mypikpak.net
+DOMAIN-KEYWORD,mypikpak
+
+# 迅雷系 CDN / 节点（PikPak 相关）
+DOMAIN-SUFFIX,sandai.net
+DOMAIN-SUFFIX,dlandroid.rcv.sandai.net
+DOMAIN-SUFFIX,hub5idx.v6.shub.sandai.net
+DOMAIN-SUFFIX,hub5pn.wap.sandai.net
+DOMAIN-SUFFIX,hub5pnc.sandai.net
+DOMAIN-SUFFIX,hub5pr.v6.phub.sandai.net
+DOMAIN-SUFFIX,hubciddata.sandai.net

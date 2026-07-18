@@ -19,3 +19,8 @@ https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Apple.list
 AI-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
 # policy: PROXY
+
+PikPak
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/PikPak.list
+# policy: PROXY (or download group)
+
