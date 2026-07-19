@@ -32,6 +32,7 @@
 # 3) 去掉策略后缀与空行，按「厂商分段」合并；同域名保留一条
 # 4) 保留本文件 SOURCES 头与分段注释
 # 5) 不要对 AI 域名做 MitM 解密
+# 6) 不含中国国内大模型 API（DeepSeek/月之暗面/火山/通义等），走系统默认/直连
 #
 # =============================================================================
 
@@ -220,27 +221,6 @@ DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,openart.ai
 DOMAIN-SUFFIX,clipdrop.co
-
-# -----------------------------------------------------------------------------
-# DeepSeek / 国内常用 API（走 AIGC 或你的 API 专线均可）
-# -----------------------------------------------------------------------------
-DOMAIN-SUFFIX,deepseek.com
-DOMAIN,api.deepseek.com
-DOMAIN-SUFFIX,chat.deepseek.com
-DOMAIN-SUFFIX,moonshot.cn
-DOMAIN-SUFFIX,moonshot.ai
-DOMAIN-SUFFIX,volces.com
-DOMAIN-SUFFIX,volcengine.com
-DOMAIN-SUFFIX,bigmodel.cn
-DOMAIN-SUFFIX,zhipuai.cn
-DOMAIN-SUFFIX,baichuan-ai.com
-DOMAIN-SUFFIX,minimaxi.com
-DOMAIN-SUFFIX,minimax.io
-DOMAIN-SUFFIX,siliconflow.cn
-DOMAIN-SUFFIX,siliconflow.com
-DOMAIN-SUFFIX,dashscope.aliyuncs.com
-DOMAIN-SUFFIX,qianwen.aliyun.com
-DOMAIN-SUFFIX,tongyi.aliyun.com
 
 # -----------------------------------------------------------------------------
 # JetBrains AI
