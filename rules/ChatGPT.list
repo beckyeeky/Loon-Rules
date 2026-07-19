@@ -1,0 +1,73 @@
+# Loon-Rules / ChatGPT — 建议策略: AIGC（稳定美区/支持 OpenAI 的节点）
+# 对照 OpenAI 官方 Network recommendations allowlist + iOS 常见依赖
+# https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# 列表不含策略名；订阅时选 AIGC。不要对下列域名做 MitM 解密。
+
+# --- 核心 ---
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,openaicom
+
+# 官方点名子域（SUFFIX 已覆盖时仍保留精确项便于阅读）
+DOMAIN,ios.chat.openai.com
+DOMAIN,android.chat.openai.com
+DOMAIN,desktop.chat.openai.com
+DOMAIN,chat.openai.com
+DOMAIN,auth0.openai.com
+DOMAIN,setup.auth.openai.com
+DOMAIN,tcr9i.chat.openai.com
+
+# --- 功能开关 / 遥测（漏了易导致功能页/插件页异常）---
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN-SUFFIX,statsig.com
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN,api.statsig.com
+DOMAIN,events.statsigapi.net
+
+# --- 鉴权 WorkOS（官方 allowlist，很多规则集漏）---
+DOMAIN-SUFFIX,workos.com
+DOMAIN-SUFFIX,workoscdn.com
+DOMAIN,cdn.workos.com
+DOMAIN,forwarder.workos.com
+DOMAIN,setup.workos.com
+DOMAIN,images.workoscdn.com
+DOMAIN,workos.imgix.net
+
+# --- 客服/应用内组件 Intercom ---
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN,api-iam.intercom.io
+DOMAIN,js.intercomcdn.com
+
+# --- CDN / 合并资源 ---
+DOMAIN-SUFFIX,openaimerge.com
+DOMAIN,cdn.openaimerge.com
+DOMAIN,openaiapi-site.azureedge.net
+
+# --- Cloudflare 挑战（插件/登录风控页）---
+DOMAIN,challenges.cloudflare.com
+
+# --- WebSocket / 实时（路由走 chatgpt.com 即可；语音另见 livekit）---
+DOMAIN-SUFFIX,livekit.cloud
+# wss://ws.chatgpt.com → DOMAIN-SUFFIX,chatgpt.com
+
+# --- 支付（订阅/Plus 页）---
+DOMAIN,js.stripe.com
+DOMAIN-SUFFIX,stripe.com
+
+# --- 错误上报（官方列出）---
+DOMAIN,o33249.ingest.sentry.io
+DOMAIN,o207216.ingest.sentry.io
+DOMAIN,rum.browser-intake-datadoghq.com
+
+# --- 邮件链（次要）---
+DOMAIN-SUFFIX,ct.sendgrid.net
+
+# --- Apple 登录相关（用 Apple 登 ChatGPT 时）---
+DOMAIN,humb.apple.com

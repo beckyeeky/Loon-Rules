@@ -24,3 +24,6 @@ PikPak
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/PikPak.list
 # policy: PROXY (or download group)
 
+ChatGPT-OpenAI
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/ChatGPT.list
+# policy: AIGC（与 AI 大全同组即可；放在较前优先匹配）
