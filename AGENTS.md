@@ -62,3 +62,11 @@ examples/        # 主配置片段示例（不直接订阅）
 # raw 是否 200
 curl -sSIL "https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Direct.list" | head -5
 ```
+
+## AI.list 维护
+
+- 单一订阅入口：`rules/AI.list`（策略 AIGC）
+- 文件头 `SOURCES:` / `UPDATE_HINT:` 供自动更新脚本解析
+- 更新流程：拉取 SOURCES 中 raw → 抽规则行 → 按厂商分段去重 → 保留头注释 → commit
+- `ChatGPT.list` 为兼容残留，勿再扩大；新域只进 `AI.list`
+

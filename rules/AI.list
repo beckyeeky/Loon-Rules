@@ -1,26 +1,267 @@
-# Loon-Rules / AI — 建议策略: PROXY
-# LLM / AI 相关（与 Proxy.list 可二选一或并存；并存时注意顺序）
+# =============================================================================
+# Loon-Rules / AI.list
+# 建议策略: AIGC（稳定支持 OpenAI/Claude 等的节点组）
+# 格式: 无策略后缀；订阅时在 Loon 选择 policy=AIGC
+# 维护: 改完 push → Loon 点更新订阅
+# =============================================================================
+#
+# ## 来源（后续 AI 自动更新请优先拉取这些 URL 再合并去重）
+#
+# SOURCES:
+# - OpenAI Network allowlist (官方)
+#   https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# - Tartarus2014 Loon AI.lsr
+#   https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# - SukkaW / ruleset.skk.moe AIGC
+#   https://ruleset.skk.moe/List/non_ip/ai.conf
+#   https://raw.githubusercontent.com/SukkaW/Surge/master/List/non_ip/ai.conf
+# - blackmatrix7 OpenAI (社区常用，可选对照)
+#   https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list
+# - blackmatrix7 Claude
+#   https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list
+# - blackmatrix7 Gemini
+#   https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list
+# - xpdigital Apple-AI (Apple Intelligence；本列表末段收录核心项)
+#   https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list
+# - beckyeeky Loon-Rules（本文件）
+#   https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
+#
+# UPDATE_HINT:
+# 1) curl 上述 raw/文档域列表
+# 2) 抽取 DOMAIN / DOMAIN-SUFFIX / DOMAIN-KEYWORD / URL-REGEX 行
+# 3) 去掉策略后缀与空行，按「厂商分段」合并；同域名保留一条
+# 4) 保留本文件 SOURCES 头与分段注释
+# 5) 不要对 AI 域名做 MitM 解密
+#
+# =============================================================================
 
+# -----------------------------------------------------------------------------
+# OpenAI / ChatGPT / Sora
+# source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,openaicom
+DOMAIN,ios.chat.openai.com
+DOMAIN,android.chat.openai.com
+DOMAIN,desktop.chat.openai.com
+DOMAIN,chat.openai.com
+DOMAIN,auth0.openai.com
+DOMAIN,setup.auth.openai.com
+DOMAIN,tcr9i.chat.openai.com
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN-SUFFIX,statsig.com
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN,api.statsig.com
+DOMAIN,events.statsigapi.net
+DOMAIN-SUFFIX,workos.com
+DOMAIN-SUFFIX,workoscdn.com
+DOMAIN,cdn.workos.com
+DOMAIN,forwarder.workos.com
+DOMAIN,setup.workos.com
+DOMAIN,images.workoscdn.com
+DOMAIN,workos.imgix.net
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN,api-iam.intercom.io
+DOMAIN,js.intercomcdn.com
+DOMAIN-SUFFIX,openaimerge.com
+DOMAIN,cdn.openaimerge.com
+DOMAIN,openaiapi-site.azureedge.net
+DOMAIN,challenges.cloudflare.com
+DOMAIN-SUFFIX,livekit.cloud
+DOMAIN,js.stripe.com
+DOMAIN-SUFFIX,stripe.com
+DOMAIN,o33249.ingest.sentry.io
+DOMAIN,o207216.ingest.sentry.io
+DOMAIN,rum.browser-intake-datadoghq.com
+DOMAIN-SUFFIX,ct.sendgrid.net
+DOMAIN,humb.apple.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+
+# -----------------------------------------------------------------------------
+# Anthropic / Claude
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list
+# -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+
+# -----------------------------------------------------------------------------
+# Google AI — Gemini / AI Studio / DeepMind / NotebookLM
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# source: https://ruleset.skk.moe/List/non_ip/ai.conf
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list
+# -----------------------------------------------------------------------------
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,gemini.google
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,geller-pa.googleapis.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN,ai.google.dev
+DOMAIN,aistudio.google.com
+DOMAIN,bard.google.com
+DOMAIN,gemini.google.com
+DOMAIN,alkalicore-pa.clients6.google.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,aida.googleapis.com
+DOMAIN,aisandbox-pa.googleapis.com
+DOMAIN-SUFFIX,cloudcode-pa.googleapis.com
+DOMAIN,daily-cloudcode-pa.googleapis.com
+DOMAIN,robinfrontend-pa.clients6.google.com
+DOMAIN,jules.google.com
+DOMAIN,antigravity.google
+DOMAIN,antigravity-unleash.goog
+DOMAIN-KEYWORD,notebooklm.google
+DOMAIN-KEYWORD,labs.google
+DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
+# Gemini 登录跳转（skk）
+URL-REGEX,https://www\.google\.com/.*continue=https://gemini\.google\.com.+
+
+# -----------------------------------------------------------------------------
+# xAI / Grok
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# source: https://ruleset.skk.moe/List/non_ip/ai.conf
+# -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
-DOMAIN-SUFFIX,deepseek.com
-DOMAIN-SUFFIX,api.deepseek.com
-DOMAIN-SUFFIX,openrouter.ai
+
+# -----------------------------------------------------------------------------
+# Microsoft Copilot / Bing AI / GitHub Copilot
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# 注意: www.bing.com 过宽，仅保留明确 AI 入口
+# -----------------------------------------------------------------------------
+DOMAIN,copilot.microsoft.com
+DOMAIN,sydney.bing.com
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,copilot.cloud.microsoft
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,microsoftcopilot.com
+
+# -----------------------------------------------------------------------------
+# Meta AI
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# -----------------------------------------------------------------------------
+DOMAIN-SUFFIX,meta.ai
+DOMAIN,imagine.meta.com
+
+# -----------------------------------------------------------------------------
+# Perplexity
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# -----------------------------------------------------------------------------
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,pplx.ai
+DOMAIN,pplx-res.cloudinary.com
+
+# -----------------------------------------------------------------------------
+# Cursor
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
-DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursorapi.com
+
+# -----------------------------------------------------------------------------
+# Cloudflare AI Gateway
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# -----------------------------------------------------------------------------
+DOMAIN,gateway.ai.cloudflare.com
+
+# -----------------------------------------------------------------------------
+# Groq / Together / Fireworks / Replicate / HF 推理
+# -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,together.ai
+DOMAIN-SUFFIX,together.xyz
+DOMAIN-SUFFIX,fireworks.ai
+DOMAIN-SUFFIX,replicate.com
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,hf.co
-DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,hf.space
+
+# -----------------------------------------------------------------------------
+# Mistral / Cohere / AI21 / Stability 等 API 厂商
+# -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,mistral.ai
 DOMAIN-SUFFIX,cohere.com
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,ai21.com
+DOMAIN-SUFFIX,stability.ai
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,leonardo.ai
+
+# -----------------------------------------------------------------------------
+# OpenRouter / Poe / 聚合
+# source: https://ruleset.skk.moe/List/non_ip/ai.conf
+# -----------------------------------------------------------------------------
+DOMAIN-SUFFIX,openrouter.ai
+DOMAIN,openrouter.ai
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,dify.ai
+DOMAIN-SUFFIX,g.ai
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,jasper.ai
+DOMAIN-SUFFIX,openart.ai
+DOMAIN-SUFFIX,clipdrop.co
+
+# -----------------------------------------------------------------------------
+# DeepSeek / 国内常用 API（走 AIGC 或你的 API 专线均可）
+# -----------------------------------------------------------------------------
+DOMAIN-SUFFIX,deepseek.com
+DOMAIN,api.deepseek.com
+DOMAIN-SUFFIX,chat.deepseek.com
+DOMAIN-SUFFIX,moonshot.cn
+DOMAIN-SUFFIX,moonshot.ai
+DOMAIN-SUFFIX,volces.com
+DOMAIN-SUFFIX,volcengine.com
+DOMAIN-SUFFIX,bigmodel.cn
+DOMAIN-SUFFIX,zhipuai.cn
+DOMAIN-SUFFIX,baichuan-ai.com
+DOMAIN-SUFFIX,minimaxi.com
+DOMAIN-SUFFIX,minimax.io
+DOMAIN-SUFFIX,siliconflow.cn
+DOMAIN-SUFFIX,siliconflow.com
+DOMAIN-SUFFIX,dashscope.aliyuncs.com
+DOMAIN-SUFFIX,qianwen.aliyun.com
+DOMAIN-SUFFIX,tongyi.aliyun.com
+
+# -----------------------------------------------------------------------------
+# JetBrains AI
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# source: https://ruleset.skk.moe/List/non_ip/ai.conf
+# -----------------------------------------------------------------------------
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN,api.jetbrains.ai
+
+# -----------------------------------------------------------------------------
+# Apple Intelligence / Private Relay 核心（可选：若 Apple 走独立策略可拆出去）
+# source: https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list
+# source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# -----------------------------------------------------------------------------
+DOMAIN,guzzoni.apple.com
+DOMAIN,mask-api.icloud.com
+DOMAIN,mask.icloud.com
+DOMAIN-SUFFIX,mask-h2.icloud.com
+DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN,cp4.cloudflare.com
+DOMAIN-SUFFIX,gateway.icloud.com

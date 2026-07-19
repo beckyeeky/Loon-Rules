@@ -16,14 +16,18 @@ Apple-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Apple.list
 # policy: DIRECT or Apple group
 
-AI-Custom
-https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
 # policy: PROXY
 
 PikPak
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/PikPak.list
 # policy: PROXY (or download group)
 
-ChatGPT-OpenAI
-https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/ChatGPT.list
 # policy: AIGC（与 AI 大全同组即可；放在较前优先匹配）
+
+# --- AI（推荐只订这一条）---
+AIGC-All
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
+# policy: AIGC
+# sources header inside file for auto-update crawlers
+# 可移除重复的 kelee/Tartarus/skk/ChatGPT 多条订阅以降低冲突（可选）
+

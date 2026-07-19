@@ -45,11 +45,21 @@ https://cdn.jsdelivr.net/gh/beckyeeky/Loon-Rules@main/rules/Direct.list
 | `rules/Proxy.list` | 强制代理（被墙/想走代理的域名） |
 | `rules/Reject.list` | 拦截（广告/追踪；轻量自用，非可莉全家桶） |
 | `rules/Apple.list` | Apple 相关（按需挂 DIRECT 或专线组） |
-| `rules/AI.list` | AI / LLM 服务（通常挂 PROXY） |
+| `rules/AI.list` | **AI 总表**（OpenAI/Claude/Gemini/xAI/Cursor/… + 官方 allowlist 补漏；含 SOURCES 头） |
 | `rules/PikPak.list` | PikPak 网盘（通常挂 PROXY / 下载组） |
-| `rules/ChatGPT.list` | ChatGPT/OpenAI 官方 allowlist 补全（建议 AIGC） |
+| `rules/ChatGPT.list` | （兼容）已并入 AI.list，建议只订 AI.list |
 
 格式说明见 [`AGENTS.md`](./AGENTS.md)。片段示例见 [`examples/`](./examples/)。
+
+## AI 总表订阅（推荐只订这一条）
+
+```text
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
+```
+
+- 策略选 **AIGC**
+- 文件头 `SOURCES:` 列出上游链接，方便脚本/AI 自动抓取合并更新
+- 旧的 `ChatGPT.list` 仅作兼容，新订阅请用 `AI.list`
 
 ## 原则
 
