@@ -29,6 +29,7 @@ https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Proxy.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Reject.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/PikPak.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/ChatGPT.list
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/DrugPipeline.list
 ```
 
 jsDelivr 备用：
@@ -48,6 +49,7 @@ https://cdn.jsdelivr.net/gh/beckyeeky/Loon-Rules@main/rules/Direct.list
 | `rules/AI.list` | **AI 总表**（OpenAI/Claude/Gemini/xAI/Cursor/… + 官方 allowlist 补漏；含 SOURCES 头） |
 | `rules/PikPak.list` | PikPak 网盘（通常挂 PROXY / 下载组） |
 | `rules/ChatGPT.list` | （兼容）已并入 AI.list，建议只订 AI.list |
+| `rules/DrugPipeline.list` | Drug Pipeline MCP 外部数据源（建议挂美国策略组） |
 
 格式说明见 [`AGENTS.md`](./AGENTS.md)。片段示例见 [`examples/`](./examples/)。
 

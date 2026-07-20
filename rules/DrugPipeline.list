@@ -1,0 +1,10 @@
+# Drug Pipeline MCP 数据源 — 订阅时选择美国策略组
+# 覆盖 ClinicalTrials.gov、openFDA、RxNorm、PubMed、EMA、Open Targets、DailyMed、MyChem.info。
+
+DOMAIN-SUFFIX,clinicaltrials.gov
+DOMAIN-SUFFIX,fda.gov
+DOMAIN-SUFFIX,nlm.nih.gov
+DOMAIN-SUFFIX,nih.gov
+DOMAIN-SUFFIX,ema.europa.eu
+DOMAIN-SUFFIX,platform.opentargets.org
+DOMAIN-SUFFIX,mychem.info
