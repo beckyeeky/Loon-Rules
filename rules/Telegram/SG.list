@@ -1,0 +1,7 @@
+# Loon-Rules / Telegram Singapore
+# 建议策略: 新加坡策略组
+# 来源: https://t.me/jpkxt/11
+# 数据源: https://bgp.he.net
+
+IP-ASN,44907,no-resolve
+IP-ASN,62014,no-resolve

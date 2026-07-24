@@ -4,6 +4,20 @@ Direct-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Direct.list
 # policy: DIRECT
 
+Telegram-SG
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Telegram/SG.list
+# policy: 新加坡策略组
+
+Telegram-US
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Telegram/US.list
+# policy: 美国策略组
+
+Telegram-EU
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Telegram/EU.list
+# policy: 欧洲策略组
+
+# Telegram 三条必须保持 SG → US → EU 顺序，并放在 Proxy-Custom 前
+
 Proxy-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Proxy.list
 # policy: PROXY
@@ -11,11 +25,6 @@ https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Proxy.list
 Reject-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Reject.list
 # policy: REJECT
-
-Telegram
-https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Telegram.list
-# policy: Telegram 专属策略组
-# 放在 Proxy-Custom 前，优先匹配 Telegram 域名和 IP 网段
 
 Apple-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Apple.list

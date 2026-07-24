@@ -17,6 +17,7 @@ DOMAIN-SUFFIX,example.com
 DOMAIN-KEYWORD,example
 IP-CIDR,10.0.0.0/8,no-resolve
 IP-CIDR6,fe80::/10,no-resolve
+IP-ASN,44907,no-resolve
 USER-AGENT,MicroMessenger*
 URL-REGEX,^https?://ads\.example\.com
 HOST,www.example.com
@@ -46,8 +47,9 @@ HOST-WILDCARD,*.example.com
 ## 目录
 
 ```text
-rules/*.list     # 可订阅规则
-examples/        # 主配置片段示例（不直接订阅）
+rules/*.list             # 通用可订阅规则
+rules/Telegram/*.list    # Telegram 分地区可订阅规则
+examples/                # 主配置片段示例（不直接订阅）
 ```
 
 ## 禁止
@@ -69,4 +71,3 @@ curl -sSIL "https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Di
 - 文件头 `SOURCES:` / `UPDATE_HINT:` 供自动更新脚本解析
 - 更新流程：拉取 SOURCES 中 raw → 抽规则行 → 按厂商分段去重 → 保留头注释 → commit
 - `ChatGPT.list` 为兼容残留，勿再扩大；新域只进 `AI.list`
-

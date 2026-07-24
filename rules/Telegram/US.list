@@ -1,0 +1,6 @@
+# Loon-Rules / Telegram United States
+# 建议策略: 美国策略组
+# 来源: https://t.me/jpkxt/11
+# 数据源: https://bgp.he.net
+
+IP-ASN,59930,no-resolve
