@@ -14,6 +14,7 @@ Loon → **配置** → **规则** → **订阅规则** → 添加：
 | Direct-Custom | 见下方 raw | DIRECT |
 | Proxy-Custom | 见下方 raw | PROXY / 你的代理组 |
 | Reject-Custom | 见下方 raw | REJECT |
+| Telegram | 见下方 raw | Telegram 专属策略组 |
 
 Raw 根：
 
@@ -27,6 +28,7 @@ https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Direct.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Proxy.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Reject.list
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Telegram.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/PikPak.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/ChatGPT.list
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/DrugPipeline.list
@@ -45,6 +47,7 @@ https://cdn.jsdelivr.net/gh/beckyeeky/Loon-Rules@main/rules/Direct.list
 | `rules/Direct.list` | 强制直连（国内常用、局域网、特殊直连） |
 | `rules/Proxy.list` | 强制代理（被墙/想走代理的域名） |
 | `rules/Reject.list` | 拦截（广告/追踪；轻量自用，非可莉全家桶） |
+| `rules/Telegram.list` | Telegram 域名及分地区 IPv4/IPv6 网段（建议挂 Telegram 专属策略组） |
 | `rules/Apple.list` | Apple 相关（按需挂 DIRECT 或专线组） |
 | `rules/AI.list` | **AI 总表**（OpenAI/Claude/Gemini/xAI/Cursor/… + 官方 allowlist 补漏；含 SOURCES 头） |
 | `rules/PikPak.list` | PikPak 网盘（通常挂 PROXY / 下载组） |

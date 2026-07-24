@@ -12,6 +12,11 @@ Reject-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Reject.list
 # policy: REJECT
 
+Telegram
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Telegram.list
+# policy: Telegram 专属策略组
+# 放在 Proxy-Custom 前，优先匹配 Telegram 域名和 IP 网段
+
 Apple-Custom
 https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/Apple.list
 # policy: DIRECT or Apple group
@@ -30,4 +35,3 @@ https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
 # policy: AIGC
 # sources header inside file for auto-update crawlers
 # 可移除重复的 kelee/Tartarus/skk/ChatGPT 多条订阅以降低冲突（可选）
-
