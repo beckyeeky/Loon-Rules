@@ -23,6 +23,8 @@
 #   https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list
 # - xpdigital Apple-AI (Apple Intelligence；本列表末段收录核心项)
 #   https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list
+# - ddgksf2013 AppleIntelligence
+#   https://raw.githubusercontent.com/ddgksf2013/Filter/master/AppleIntelligence.list
 # - beckyeeky Loon-Rules（本文件）
 #   https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
 #
@@ -233,15 +235,19 @@ DOMAIN,api.jetbrains.ai
 # -----------------------------------------------------------------------------
 # Apple Intelligence / Private Relay 核心（可选：若 Apple 走独立策略可拆出去）
 # source: https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list
+# source: https://raw.githubusercontent.com/ddgksf2013/Filter/master/AppleIntelligence.list
 # source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
 # -----------------------------------------------------------------------------
-DOMAIN,guzzoni.apple.com
+DOMAIN-SUFFIX,gateway.icloud.com
+DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
+DOMAIN-SUFFIX,guzzoni.apple.com
+DOMAIN-SUFFIX,cp4.cloudflare.com
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,apple-relay.akamaized.net
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
 DOMAIN,mask-api.icloud.com
 DOMAIN,mask.icloud.com
 DOMAIN-SUFFIX,mask-h2.icloud.com
-DOMAIN-SUFFIX,apple-relay.apple.com
-DOMAIN-SUFFIX,apple-relay.cloudflare.com
-DOMAIN-SUFFIX,apple-relay.fastly-edge.com
-DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN,cp4.cloudflare.com
-DOMAIN-SUFFIX,gateway.icloud.com

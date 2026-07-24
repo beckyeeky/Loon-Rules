@@ -12,6 +12,7 @@ urls=(
   "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list"
   "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list"
   "https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list"
+  "https://raw.githubusercontent.com/ddgksf2013/Filter/master/AppleIntelligence.list"
 )
 for u in "${urls[@]}"; do
   f="$OUT/$(echo "$u" | sed 's#https\?://##;s#[/:]#_#g')"
