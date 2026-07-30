@@ -225,6 +225,15 @@ DOMAIN-SUFFIX,openart.ai
 DOMAIN-SUFFIX,clipdrop.co
 
 # -----------------------------------------------------------------------------
+# ElevenLabs
+# -----------------------------------------------------------------------------
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,elevenlabs.net
+DOMAIN-SUFFIX,elevenlabs.com
+DOMAIN-SUFFIX,eleven-cdn.com
+DOMAIN-SUFFIX,elevenlabs-user-content.com
+
+# -----------------------------------------------------------------------------
 # JetBrains AI
 # source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
 # source: https://ruleset.skk.moe/List/non_ip/ai.conf
