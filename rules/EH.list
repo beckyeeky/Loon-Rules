@@ -1,0 +1,18 @@
+# =============================================================================
+# e站（画廊 / 图床 / Tracker / H@H 节点 CDN）
+# 建议策略: PROXY（订阅时在 Loon 选择 policy=PROXY）
+# =============================================================================
+
+# 站点（主站 + 里站）
+DOMAIN-SUFFIX,e-hentai.org
+DOMAIN-SUFFIX,exhentai.org
+
+# 图床（缩略图 / 原图 CDN，含 origin-* 等子域）
+DOMAIN-SUFFIX,ehgt.org
+
+# Tracker（BT 做种）
+DOMAIN-SUFFIX,ehtracker.org
+
+# H@H 节点 CDN（<节点ID>.hath.network 子域）
+DOMAIN-SUFFIX,hath.network
+DOMAIN-SUFFIX,hentaiathome.net
