@@ -55,6 +55,7 @@ https://cdn.jsdelivr.net/gh/beckyeeky/Loon-Rules@main/rules/Direct.list
 | `rules/Telegram/US.list` | Telegram 美国 ASN（挂美国策略组） |
 | `rules/Telegram/EU.list` | Telegram 欧洲 ASN/网段（挂欧洲策略组） |
 | `rules/Apple.list` | Apple 相关（按需挂 DIRECT 或专线组） |
+| `rules/AppleTV.list` | Apple TV+ 视频服务（建议挂 Apple TV 流媒体节点组） |
 | `rules/AI.list` | **AI 总表**（OpenAI/Claude/Gemini/xAI/Cursor/… + 官方 allowlist 补漏；含 SOURCES 头） |
 | `rules/EH.list` | e站（画廊/图床/Tracker/H@H 节点 CDN，建议挂 PROXY） |
 | `rules/PikPak.list` | PikPak 网盘（通常挂 PROXY / 下载组） |
@@ -63,7 +64,12 @@ https://cdn.jsdelivr.net/gh/beckyeeky/Loon-Rules@main/rules/Direct.list
 
 格式说明见 [`AGENTS.md`](./AGENTS.md)。片段示例见 [`examples/`](./examples/)。
 
-## Telegram 分地区订阅
+```text
+https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AppleTV.list
+```
+
+建议将 `AppleTV.list` 放在 `Apple.list` 前面，并在 Loon「订阅规则」中指定 Apple TV 流媒体策略组。
+
 
 按以下顺序放在通用 `Proxy.list` 前，避免后面的 Telegram 域名规则提前接管流量：
 

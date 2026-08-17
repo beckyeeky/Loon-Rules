@@ -1,0 +1,15 @@
+# Loon-Rules / Apple TV — Apple TV+ 视频服务
+# 建议策略: Apple TV 流媒体节点组
+# 规则来源：Apple 服务域名及实际播放链路的保守集合
+
+DOMAIN-SUFFIX,tv.apple.com
+DOMAIN-SUFFIX,tv.apple-dns.net
+DOMAIN-SUFFIX,video-edge.apple.com
+DOMAIN-SUFFIX,video-edge.itunes.apple.com
+DOMAIN-SUFFIX,aod.itunes.apple.com
+DOMAIN-SUFFIX,streaming.apple.com
+DOMAIN-SUFFIX,play.itunes.apple.com
+DOMAIN-SUFFIX,ls.apple.com
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,itunes.com
