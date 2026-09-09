@@ -128,6 +128,7 @@ DOMAIN,aisandbox-pa.googleapis.com
 DOMAIN-SUFFIX,cloudcode-pa.googleapis.com
 DOMAIN,daily-cloudcode-pa.googleapis.com
 DOMAIN,robinfrontend-pa.clients6.google.com
+DOMAIN,robinfrontend-pa.googleapis.com
 DOMAIN,jules.google.com
 DOMAIN,antigravity.google
 DOMAIN,antigravity-unleash.goog
@@ -259,7 +260,7 @@ DOMAIN-SUFFIX,guzzoni.apple.com
 DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 DOMAIN-SUFFIX,seed.siri.apple.com
 DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN-SUFFIX,v.aaplimg.com
+# 以下精确主机为兼容保留；上游已注释停用，必要性待实测。
 DOMAIN,seed-siri-apple-com.v.aaplimg.com
 DOMAIN,smoot-searchv2-aapse1c.v.aaplimg.com
 DOMAIN,mask-api.icloud.com

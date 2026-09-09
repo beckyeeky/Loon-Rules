@@ -7,11 +7,10 @@ mkdir -p "$OUT"
 urls=(
   "https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr"
   "https://ruleset.skk.moe/List/non_ip/ai.conf"
-  "https://raw.githubusercontent.com/SukkaW/Surge/master/List/non_ip/ai.conf"
+  "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/AppleAI/AppleAI_Domain.yaml"
   "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list"
   "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list"
   "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list"
-  "https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list"
   "https://raw.githubusercontent.com/ddgksf2013/Filter/master/AppleIntelligence.list"
 )
 for u in "${urls[@]}"; do
