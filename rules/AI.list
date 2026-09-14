@@ -174,13 +174,18 @@ DOMAIN-SUFFIX,pplx.ai
 DOMAIN,pplx-res.cloudinary.com
 
 # -----------------------------------------------------------------------------
-# Cursor
+# Cursor / Grok Bot 云主机
 # source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# source: https://github.com/Nan-nx/En/blob/master/Profile/Ai.list
+# source: https://cursor.com/docs/enterprise/network-configuration
+# cursorvm.com 覆盖 Cloud Agent / Grok Bot 多层主机，例如
+# <pod>-<id>.us12.cursorvm.com；DOMAIN-SUFFIX 可匹配多层子域。
 # -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,cursor-cdn.com
 DOMAIN-SUFFIX,cursorapi.com
+DOMAIN-SUFFIX,cursorvm.com
 
 # -----------------------------------------------------------------------------
 # Cloudflare AI Gateway
