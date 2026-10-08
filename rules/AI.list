@@ -27,6 +27,8 @@
 #   https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/AppleAI/AppleAI_Domain.yaml
 # - beckyeeky Loon-Rules（本文件）
 #   https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
+# - Claude 防封分流补全（用户提供，2026-10-08 核对 DNS / ARIN）
+#   核心域、CDN、Auth0、Ghost、Fathom、Datadog intake、Anthropic IP/ASN
 #
 # UPDATE_HINT:
 # 1) curl 上述 raw/文档域列表
@@ -93,10 +95,30 @@ DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 # Anthropic / Claude
 # source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list
+# source: https://ruleset.skk.moe/List/non_ip/ai.conf
+# 2026-10-08: 用户提供的防封分流配置，已按本仓格式去掉策略名。
+# DOMAIN-SUFFIX 已覆盖的精确主机不再单列。
+# statsig / intercom 见 OpenAI 段，Claude 共用，不在此重复。
+# claudemcpclient.com 当日 DNS 无记录，未收录。
+# sentry.io / datadog / sift 为共享遥测域，后缀和关键词会把无关流量送进 AIGC，未收录。
 # -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,claude.site
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+DOMAIN,cdn.usefathom.com
+DOMAIN,browser-intake-us5-datadoghq.com
+# ARIN NET-160-79-104-0-1 / NET6-2607-6BC0-1，登记人 Anthropic, PBC。
+# 160.79.104.0/21 是分配段；AS399358 当日宣告 160.79.104.0/23。
+IP-CIDR,160.79.104.0/21,no-resolve
+IP-CIDR6,2607:6bc0::/32,no-resolve
+IP-ASN,399358,no-resolve
 
 # -----------------------------------------------------------------------------
 # Google AI — Gemini / AI Studio / DeepMind / NotebookLM
