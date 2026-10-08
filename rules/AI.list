@@ -99,7 +99,7 @@ DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 # 2026-10-08: 用户提供的防封分流配置，已按本仓格式去掉策略名。
 # DOMAIN-SUFFIX 已覆盖的精确主机不再单列。
 # statsig / intercom 见 OpenAI 段，Claude 共用，不在此重复。
-# claudemcpclient.com 当日 DNS 无记录，未收录。
+# claudemcpclient.com 根域无 A/AAAA，NS 为 Cloudflare（isla/randy.ns.cloudflare.com）。
 # sentry.io / datadog / sift 为共享遥测域，后缀和关键词会把无关流量送进 AIGC，未收录。
 # -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,anthropic.com
@@ -108,6 +108,7 @@ DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN,anthropic.com.cdn.cloudflare.net
 DOMAIN,anthropic.auth0.com
