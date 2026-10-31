@@ -7,6 +7,7 @@ mkdir -p "$OUT"
 urls=(
   "https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr"
   "https://ruleset.skk.moe/List/non_ip/ai.conf"
+  "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/ai.conf"
   "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/AppleAI/AppleAI_Domain.yaml"
   "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list"
   "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list"

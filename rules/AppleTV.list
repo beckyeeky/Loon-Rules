@@ -1,6 +1,8 @@
 # Loon-Rules / Apple TV — Apple TV+ 视频服务
 # 建议策略: Apple TV 流媒体节点组
 # 规则来源：Apple 服务域名及实际播放链路的保守集合
+# 注意：含通用 Apple 服务域（ls.apple.com、cdn-apple.com、mzstatic.com、itunes.com 等），
+# 并非 Apple TV 专属，可能与 Apple.list / AI.list 重叠；订阅顺序会影响实际命中。
 
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,tv.apple-dns.net

@@ -12,9 +12,9 @@
 #   https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
 # - Tartarus2014 Loon AI.lsr
 #   https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
-# - SukkaW / ruleset.skk.moe AIGC
+# - SukkaW / ruleset.skk.moe AIGC（GitHub 源在 Source/ 目录；List/ 为生成产物，raw 路径已 404）
 #   https://ruleset.skk.moe/List/non_ip/ai.conf
-#   https://raw.githubusercontent.com/SukkaW/Surge/master/List/non_ip/ai.conf
+#   https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/ai.conf
 # - blackmatrix7 OpenAI (社区常用，可选对照)
 #   https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list
 # - blackmatrix7 Claude
@@ -22,9 +22,12 @@
 # - blackmatrix7 Gemini
 #   https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list
 # - xpdigital Apple-AI (Apple Intelligence；本列表末段收录核心项)
+#   历史来源，2026-10-31 复核 HTTP 404，上游当前不可访问；已收录规则保留，不据此新增
 #   https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list
-# - Apple Intelligence / Siri 官方补充（Apple AI 专用域名）
+# - Apple Intelligence / Siri 社区补充（社区整理，非 Apple 官方发布）
 #   https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/AppleAI/AppleAI_Domain.yaml
+# - Apple 官方支持文档（Apple 服务主机与端口，非 AI 专属；仅作域名归属佐证）
+#   https://support.apple.com/en-us/101555
 # - beckyeeky Loon-Rules（本文件）
 #   https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
 # - Claude 防封分流补全（用户提供，2026-10-08 核对 DNS / ARIN）
@@ -175,6 +178,8 @@ DOMAIN-KEYWORD,labs.google
 DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
 # Gemini 登录跳转（skk）
 URL-REGEX,https://www\.google\.com/.*continue=https://gemini\.google\.com.+
+# 旁注: 该 HTTPS 完整路径匹配依赖 Loon 可见的 URL（明文或已解密）；未开 MitM 时
+# 不保证命中，仅作辅助。本列表不为 AI 域名开启 MitM。
 
 # -----------------------------------------------------------------------------
 # xAI / Grok
@@ -187,7 +192,12 @@ DOMAIN-SUFFIX,grok.com
 # -----------------------------------------------------------------------------
 # Microsoft Copilot / Bing AI / GitHub Copilot
 # source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
-# 注意: www.bing.com 过宽，仅保留明确 AI 入口
+# source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+# 注意: DOMAIN-SUFFIX,bing.com 为通用 Bing 后缀，保留现状（含搜索/图片等非 AI 流量），
+# 不据此继续扩大；新增只收官方 allowlist 中的明确 AI 主机。
+# 2026-10-31: 按 GitHub Copilot 官方 allowlist 补客户端建议、遥测与实验域。
+# api.github.com 为共享 GitHub REST API：本列表排在 Proxy.list 之前时，普通
+# GitHub API 请求也会走 AIGC，而非 Proxy.list 的 github.com 后缀，按需评估。
 # -----------------------------------------------------------------------------
 DOMAIN,copilot.microsoft.com
 DOMAIN,sydney.bing.com
@@ -195,6 +205,11 @@ DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,copilot.cloud.microsoft
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,microsoftcopilot.com
+DOMAIN,api.github.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,origin-tracker.githubusercontent.com
+DOMAIN,copilot-telemetry.githubusercontent.com
+DOMAIN,default.exp-tas.com
 
 # -----------------------------------------------------------------------------
 # Meta AI
@@ -216,14 +231,22 @@ DOMAIN,pplx-res.cloudinary.com
 # source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
 # source: https://github.com/Nan-nx/En/blob/master/Profile/Ai.list
 # source: https://cursor.com/docs/enterprise/network-configuration
+# source: https://cursor.com/help/troubleshooting/sign-in-domains
 # cursorvm.com 覆盖 Cloud Agent / Grok Bot 多层主机，例如
 # <pod>-<id>.us12.cursorvm.com；DOMAIN-SUFFIX 可匹配多层子域。
+# 2026-10-31: 登录页迁移至 accounts.spacex.ai / accounts.x.ai；官方要求放行
+# *.grokusercontent.com、*.grokipedia.com 等认证依赖。此处只取精确主机，
+# 不加 spacex.ai / grokusercontent.com 宽泛后缀。
 # -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,cursor-cdn.com
 DOMAIN-SUFFIX,cursorapi.com
 DOMAIN-SUFFIX,cursorvm.com
+DOMAIN,accounts.spacex.ai
+DOMAIN,auth.grokusercontent.com
+DOMAIN,auth.grokipedia.com
+DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
 
 # -----------------------------------------------------------------------------
 # Cloudflare AI Gateway
@@ -290,6 +313,9 @@ DOMAIN,api.jetbrains.ai
 # source: https://raw.githubusercontent.com/xpdigital/Apple-Rule/main/Apple-AI.list
 # source: https://raw.githubusercontent.com/ddgksf2013/Filter/master/AppleIntelligence.list
 # source: https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/AI.lsr
+# source: https://support.apple.com/en-us/101555
+# 2026-10-31: xpdigital 上游已不可访问（404），其历史条目保留；Accademia 为社区补充，
+# Apple 官方支持文档仅佐证主机归属，不声明这些域为 AI 专属。
 # -----------------------------------------------------------------------------
 DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
 DOMAIN-SUFFIX,apple-relay.fastly-edge.com
