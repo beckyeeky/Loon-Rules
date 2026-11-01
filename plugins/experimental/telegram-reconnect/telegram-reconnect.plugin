@@ -1,0 +1,23 @@
+#!name = Telegram 策略切换实验
+#!desc = 默认只观察就绪；手动策略切换实验，不保证断连或重连。启用前阅读 README。
+#!author = beckyeeky
+#!homepage = https://github.com/beckyeeky/Loon-Rules/tree/main/plugins/experimental/telegram-reconnect
+#!loon_version = 3.5.1(983)
+#!date = 2026-11-01
+#!tag = 实验,Telegram
+#!type = normal
+
+[Argument]
+MODE = select,"observe","reconnect",type=string,tag=工作模式
+POLICY_GROUP = input,"Telegram",type=string,tag=实际承载流量的 select 组
+INTERVAL = input,300,type=number,tag=成功冷却秒数
+HOLD_MS = input,300,type=number,tag=REJECT 保持毫秒数,desc=脚本校验范围 100 至 1500
+AUTO_TRIGGER = switch,false,type=boolean,tag=启用第三方 HTTP 响应触发
+NOTIFY = switch,true,type=boolean,tag=策略切换结果通知
+
+[Script]
+generic then script("https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/plugins/experimental/telegram-reconnect/telegram-reconnect.js", {${MODE}, ${POLICY_GROUP}, ${INTERVAL}, ${HOLD_MS}, ${AUTO_TRIGGER}, ${NOTIFY}}) with tag="Telegram 策略实验：手动", timeout=10
+response if ${AUTO_TRIGGER} == true && ${url} ~= /^https:\/\/(api\.swiftgram\.app|api\.imem\.app|api\.iturrit\.com)(:443)?(\/|\?|$)/ then script("https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/plugins/experimental/telegram-reconnect/telegram-reconnect.js", {${MODE}, ${POLICY_GROUP}, ${INTERVAL}, ${HOLD_MS}, ${AUTO_TRIGGER}, ${NOTIFY}}) with tag="Telegram 策略实验：第三方响应", timeout=10, requires_body=false
+
+[MitM]
+hostname = api.swiftgram.app, api.imem.app, api.iturrit.com

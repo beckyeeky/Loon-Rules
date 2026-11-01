@@ -2,8 +2,9 @@
 
 ## 仓库定位
 
-- **只做 Loon 可订阅的远程规则列表**（`.list`）
-- 不放节点、不放完整配置、不放 MitM 插件脚本
+- 主要维护 Loon 可订阅的远程规则列表（`.list`）。
+- 按仓库所有者要求，实验插件独立归入 `plugins/experimental/<功能>/`，不得混入 `rules/`。
+- 不放节点、不放完整配置；实验插件必须附来源说明、版本门槛、风险边界与离线测试，不能将离线通过表述为真机验证。
 - Owner：beckyeeky · 本地：`/root/repos/Loon-Rules`
 
 ## Loon 规则行格式（本仓约定）
@@ -50,6 +51,7 @@ HOST-WILDCARD,*.example.com
 rules/*.list             # 通用可订阅规则
 rules/Telegram/*.list    # Telegram 分地区可订阅规则
 examples/                # 主配置片段示例（不直接订阅）
+plugins/experimental/    # 实验插件，按功能分目录；安装方式见各自 README
 ```
 
 ## 禁止

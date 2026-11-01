@@ -2,8 +2,8 @@
 
 Beck 自用 / 可复用的 **Loon 分流规则** 仓库（远程规则列表）。
 
-> 只放规则（DOMAIN / IP-CIDR 等），**不含**完整 `.lcf` 配置、节点订阅、插件。  
-> 完整配置请继续用可莉模板等；本仓用「规则订阅」方式挂进 Loon。
+> 以规则（DOMAIN / IP-CIDR 等）为主，**不含**完整 `.lcf` 配置或节点订阅。
+> `rules/` 仍通过「规则订阅」使用；按需新增的测试插件独立放在 `plugins/experimental/`，通过「插件」安装，不改变既有规则。
 
 ## 安装（远程规则）
 
@@ -95,6 +95,14 @@ https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/rules/AI.list
 2. **列表不含策略名**：策略在 Loon 订阅时选择。  
 3. **改完 push 即可**：Loon 里对该规则点更新。  
 4. 与插件（如 [TabulaBili-Loon](https://github.com/beckyeeky/TabulaBili-Loon)）正交：分流不管插件逻辑。
+
+## 实验插件（TestFlight）
+
+| 目录 | 用途与状态 |
+|------|------------|
+| [`plugins/experimental/telegram-reconnect/`](./plugins/experimental/telegram-reconnect/) | Telegram 策略重连实验：Script V2（3.5.1 build 983+），默认观察、自动触发默认关闭；手动验证后再启用。思路改自 AlbertMusk/Configs，非 MTProto 解密或假死检测器，未经过 Loon 真机验证。 |
+
+实验插件不属于分流规则订阅。安装、前置设置、来源与测试方法见对应目录 README。
 
 ## License
 
