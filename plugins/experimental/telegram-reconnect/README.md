@@ -13,6 +13,32 @@
 - `getSubPolicies` 能检查可选名称，不能替代用户确认该组的真实类型、路由覆盖和当前连接行为。脚本同时兼容字符串数组和含 `name` 的对象数组；其他元素格式会停止，不切换。非 select 组可能无法切换，会按失败处理。
 - `generic` 手动入口始终可用，不受 `AUTO_TRIGGER` 控制。不设置 cron、不注册网络变化事件，不做定时或后台检测。
 
+## 使用前先配置策略组
+
+**安装插件不会自动给策略组添加 `REJECT`，需要在主配置中手动添加。** `POLICY_GROUP` 必须与实际承载 Telegram 流量的 select 组名称完全一致，默认是 `Telegram`。
+
+例如，原配置为：
+
+```ini
+Telegram = select,Proxies,US,HK,JP,TW,SG,欧洲
+```
+
+在原有选项后加上 `REJECT`，保留原来的图标、测速地址等其他参数：
+
+```ini
+Telegram = select,Proxies,US,HK,JP,TW,SG,欧洲,REJECT
+```
+
+上述其他组名仅为示例，沿用自己的配置即可。`REJECT` 是临时切换选项，平时仍应选择原来的可用策略。
+
+如果收到 **“未切换：组不存在或子策略不含 REJECT”**：
+
+1. 检查插件的 `POLICY_GROUP` 是否与当前配置中的组名一致，包括大小写、空格和表情符号。
+2. 检查该组的直接可选项里是否有字面名称为 `REJECT` 的选项；仅在别的组里添加不够。
+3. 保存并重新加载主配置，保持 `MODE=observe` 手动运行，确认检查通过后再测试 `reconnect`。先不要开启自动触发。
+
+该提示表示脚本在检查阶段停止，尚未执行策略切换。即使检查通过，是否能断开既有连接、恢复 Telegram 通信仍需实际验证。测试时若该组停在 `REJECT`，请立即手动切回原来的可用策略。
+
 ## 文件与安装
 
 - `telegram-reconnect.plugin`：Script V2 元数据、参数、手动入口和一条 response 入口。
