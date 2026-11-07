@@ -1,0 +1,32 @@
+# AppleMusic — Loon 独立规则列表（保守挑选的 Apple Music 相关主机；不宣称已逐项验证为音乐专属）
+# 来源：blackmatrix7/ios_rule_script 的 AppleMusic 规则（2025-06-06 快照）中「音乐专属」部分，
+#       按「最小已知主机集」裁剪：只保留 6 个精确主机 + 2 个 applemusic / music 后缀。
+# 注意：本列表与 AppleTV、泛 Apple 列表存在重叠（如 itunes.apple.com、部分 ls.apple.com 主机），
+#       重叠时以配置中排在更前面的规则为准；本列表建议放在 Apple 总表之前。
+# 用法：作为「远程规则」列表订阅/导入（订阅时在 UI 里为本列表选择策略）。
+# 注意：本文件按订阅列表格式书写，行内不含策略。若要手工粘进主配置的 [Rule] 段，
+#       Loon 主配置每条规则后面必须带策略（如 DOMAIN,music.apple.com,PROXY），
+#       逐行补上你自己的策略名后再粘贴，否则整条会因缺少策略而无效。
+#
+# 已收录（上游 10 项中的 8 项）：
+#   - 6 个精确主机：aod-ssl / aod / audio-ssl / audio / mvod / streamingaudio（.itunes.apple.com）
+#   - 2 个后缀：applemusic.com、music.apple.com（音乐站点域名，仍可能与其它 Apple 域重叠）
+#
+# 故意未收录（见 README「规则」小节）：
+#   - DOMAIN-SUFFIX,blobstore.apple.com —— 该域由多个 Apple 服务（iCloud、App Store 等）共享，
+#     收进 Apple Music 组会把无关流量一起送走；需要时请自行按业务实测后单独加入。
+#   - USER-AGENT,Music* —— UA 规则粒度粗、易误伤，且与主机规则重复；本列表不默认启用。
+#   - 通用 CDN（*.mzstatic.com、*.itunes-apple.com.akadns.net、*.phobos.apple.com 等）——
+#     与 App Store / 其它 Apple 服务共用，不能当作音乐专属，故不整域收录。
+#     若实测发现某些区域经 CDN 拉流，请以 Loon 日志里的真实主机为准确认后再补，不要按猜测添加。
+#
+# 说明：本文件只做分流，不做解锁、不改账号/商店地区，也不改变能播放的内容范围。
+
+DOMAIN,aod-ssl.itunes.apple.com
+DOMAIN,aod.itunes.apple.com
+DOMAIN,audio-ssl.itunes.apple.com
+DOMAIN,audio.itunes.apple.com
+DOMAIN,mvod.itunes.apple.com
+DOMAIN,streamingaudio.itunes.apple.com
+DOMAIN-SUFFIX,applemusic.com
+DOMAIN-SUFFIX,music.apple.com

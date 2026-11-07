@@ -1,0 +1,43 @@
+{
+  "_note": "实测样本（美国站 album lookup，默认 limit 可能导致截断，resultCount 为本次返回条数）",
+  "resultCount": 51,
+  "results": [
+    {
+      "wrapperType": "collection",
+      "collectionId": 6822966749,
+      "artistName": "Square Enix Music",
+      "collectionName": "FINAL FANTASY RESONANCE Original Soundtrack",
+      "country": "USA"
+    },
+    {
+      "wrapperType": "track",
+      "kind": "song",
+      "trackId": 6822966750,
+      "collectionId": 6822966749,
+      "trackName": "Final Fantasy",
+      "artistName": "Nobuo Uematsu",
+      "collectionName": "FINAL FANTASY RESONANCE Original Soundtrack",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a3/4e/ee/a34eeea9-c343-80f2-b703-9ed6a1502543/mzaf_13859999279572405926.plus.aac.p.m4a",
+      "country": "USA",
+      "trackTimeMillis": 130241,
+      "trackNumber": 1,
+      "discCount": 2,
+      "isStreamable": false
+    },
+    {
+      "wrapperType": "track",
+      "kind": "song",
+      "trackId": 6822966751,
+      "collectionId": 6822966749,
+      "trackName": "Main Theme",
+      "artistName": "Nobuo Uematsu & Noriyasu Agematsu",
+      "collectionName": "FINAL FANTASY RESONANCE Original Soundtrack",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/74/0f/92/740f920c-7a67-4c57-c22b-c0b62c4b3660/mzaf_14430914688967162982.plus.aac.p.m4a",
+      "country": "USA",
+      "trackTimeMillis": 142820,
+      "trackNumber": 2,
+      "discCount": 2,
+      "isStreamable": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "_note": "实测样本（日本站 lookup，已裁剪无关字段；属样本非全集）",
+  "resultCount": 1,
+  "results": [
+    {
+      "wrapperType": "track",
+      "kind": "song",
+      "trackId": 6822966763,
+      "collectionId": 6822966749,
+      "trackName": "Onslaught",
+      "artistName": "上松範康",
+      "collectionName": "FINAL FANTASY RESONANCE Original Soundtrack",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a8/91/5b/a8915ba4-9c4f-7872-93f5-27aa64bf51a8/mzaf_2027180181511989394.plus.aac.p.m4a",
+      "country": "JPN",
+      "trackTimeMillis": 93143,
+      "trackNumber": 12,
+      "discCount": 2,
+      "isStreamable": false
+    }
+  ]
+}

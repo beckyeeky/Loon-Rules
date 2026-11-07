@@ -1,0 +1,27 @@
+#!name = Apple Music 节点探测
+#!desc = 在 Loon 节点/策略页长按节点运行：用该节点查询 Apple 公开 iTunes lookup 目录并探测试听资源首段（Range 1024 字节，最多 1 次）。只读探测，不改配置、不切换策略、不收集账号信息。不含 MitM、不含规则。
+#!author = beckyeeky
+#!homepage = https://github.com/beckyeeky/Loon-Rules/tree/main/plugins/experimental/apple-music-probe
+#!date = 2026-11-07
+#!loon_version = 3.5.1(983)
+#!tag = 工具,探测,AppleMusic
+#!type = normal
+#!system = iOS,iPadOS,macOS
+
+# ---------------------------------------------------------------------------
+# 说明（给阅读配置的人，Loon 忽略 # 注释）
+# 1. 本插件只有一个 generic 脚本，必须手动触发：节点/策略页长按目标节点 → 菜单选「Apple Music 节点探测」。
+# 2. 不声明 [MitM]：generic 脚本不拦截任何请求，也不解析 music.apple.com 网页；目录数据来自公开
+#    https://itunes.apple.com/lookup 接口。
+# 3. 不声明 [Rule]：探测不改变任何流量的路由；节点只影响本脚本内的 $httpClient 出口。
+# 4. 脚本直接由下方 [Script] 的 raw 地址加载，与本地目录结构无关；换分支/改路径需同步改这一行。
+# ---------------------------------------------------------------------------
+
+[Argument]
+url = input,https://music.apple.com/jp/album/onslaught/6822966749?i=6822966763&l=en-US,type=string,tag=探测链接,desc=仅接受官方 music.apple.com 的 /<地区>/album|song/... 链接；含 ?i= 时优先用歌曲 ID
+timeout_ms = input,8000,type=number,tag=单请求超时(ms),desc=$httpClient 单次请求超时，范围 1000-60000
+total_timeout_ms = input,20000,type=number,tag=总预算(ms),desc=脚本整体预算（含所有请求），到点立即结束，范围 2000-120000
+script_timeout = input,30,type=number,tag=脚本超时(s),desc=Loon 对该 Script 的整体超时（秒），Generic 默认 300
+
+[Script]
+generic then script("https://raw.githubusercontent.com/beckyeeky/Loon-Rules/main/plugins/experimental/apple-music-probe/scripts/applemusic-probe.js", {${url}, ${timeout_ms}, ${total_timeout_ms}}) with tag="Apple Music 探测", img_url="music.note", timeout=${script_timeout}
