@@ -172,7 +172,14 @@ DOMAIN,robinfrontend-pa.clients6.google.com
 DOMAIN,robinfrontend-pa.googleapis.com
 DOMAIN,jules.google.com
 DOMAIN,antigravity.google
+DOMAIN,antigravity.google.com
 DOMAIN,antigravity-unleash.goog
+# Antigravity 前端静态域与后端/预发主机（2026-11-19 补全；usercontent.goog 为泛解析共享域，仅精确匹配）
+DOMAIN,antigravity.static.usercontent.goog
+DOMAIN,antigravity.googleapis.com
+DOMAIN,antigravity-pa.googleapis.com
+DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
+DOMAIN,aicode.googleapis.com
 DOMAIN-KEYWORD,notebooklm.google
 DOMAIN-KEYWORD,labs.google
 DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
